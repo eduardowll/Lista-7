@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+/*
+Faça uma função que recebe um número inteiro por parâmetro e retorna
+verdadeiro se ele for par e falso se for ímpar. 
+*/
+
+bool VF(int x);
+
+int main(){
+	
+	int x;
+	
+	cout << "\n\tDigite um numero inteiro: ";
+	cin >> x; 
+	if(VF(x) == true){
+		cout << "\tO numero inteiro e par!";
+	}else{
+		cout << "\tO numero inteiro e impar!";
+	}
+	
+	cout << "\n\tFim de programa";
+}
+
+bool VF(int x){
+	if(x%2 == 0){
+		return true;
+	}else{
+		return false;
+	}
+}
