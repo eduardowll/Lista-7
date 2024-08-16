@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+/*
+Numa disciplina são dadas duas provas e dois trabalhos, mas a média é calculada
+considerando-se apenas a maior nota de prova e a maior nota de trabalho. Elabore um
+algoritmo que, dadas as quatro notas de um aluno, informe a sua média. Para isso, utilize
+duas funções: uma que determine o maior valor entre as notas (de provas ou de
+trabalhos) e outra que calcule a média aritmética das duas maiores notas. 
+*/
+
+struct tNotas{
+	float maiortrb, maiorprv;
+};
+
+tNotas MaiorNota(float trab1, float trab2, float prova1, float prova2);
+float MediaNotas(tNotas notas, float media);
+
+int main(){
+
+	float trab1, trab2, prova1, prova2, media = 0;
+	tNotas notas;
+	
+	cout << "\n\tDigite a nota das provas: ";
+	cin >> prova1 >> prova2;
+	cout << "\tDigite a nota dos trabalhos: ";
+	cin >> trab1 >> trab2;
+	notas = MaiorNota(trab1, trab2, prova1, prova2);
+	media = MediaNotas(notas, media);
+	cout << "\tMedia das notas: " << media;
+	
+	cout << "\n\tFim de programa";
+}
+
+tNotas MaiorNota(float trab1, float trab2, float prova1, float prova2){
+	tNotas maiornotas; 
+	if(prova1 < prova2){
+		maiornotas.maiorprv = prova2;
+	}else{
+		maiornotas.maiorprv = prova1;
+	}
+	if(trab1 < trab2){
+		maiornotas.maiortrb = trab2;
+	}else{
+		maiornotas.maiortrb = trab1;
+	}
+		
+	return maiornotas;
+}
+
+float MediaNotas(tNotas notas, float media){
+	media = (notas.maiorprv + notas.maiortrb)/2;
+	return media;
+}
