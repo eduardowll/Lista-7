@@ -15,20 +15,22 @@ int main(){
 	
 	cout << "\n\tDigite 2 numeros inteiro: ";
 	cin >> n1 >> n2;
-	
-
-
+	cout << "\tSoma dos numeros nesses intervalo: " << Soma(n1, n2);
 	cout << "\n\tFim de programa";
 }
 
 int Soma(int n1, int n2){
-	int soma;
+	int soma = 0;
 	if(n1 > n2){
-		for(int i = n2; i < (n1-1); i++){
-			soma = n2 + i;
-		}
+		for (int i = n2; i <= n1; i++){
+    		soma = soma + i;
+		}  
+		return soma;
 	}
 	if(n1 < n2){
-		
+		for (int i = n1; i <= n2; i++){
+    		soma = soma + i;
+		}
+		return soma;
 	}	
 }
