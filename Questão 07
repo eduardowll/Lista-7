@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+/*
+Escreva uma função chamada Troca que troque os valores dos parâmetros
+recebidos. Essa função não deve ter retorno. 
+*/
+
+void Troca(int n1, int n2, int *p1, int *p2);
+
+int main(){
+	
+	int n1, n2;
+	int *p1, *p2;
+	
+	cout << "\n\tDigite dois numeros inteiros: ";
+	cin >> n1 >> n2;
+	cout << "\n\tn1 = " << n1;
+	cout << "\n\tn2 = " << n2;
+	
+	p1 = &n1;
+	p2 = &n2;
+	Troca(n1, n2, p1, p2);
+	cout << "\n\tTroca:";
+	cout << "\n\tn1 = " << n1;
+	cout << "\n\tn2 = " << n2;
+	
+}
+
+void Troca(int n1, int n2, int *p1, int *p2){
+	
+	*p1 = n2;
+	*p2 = n1;
+	
+}
