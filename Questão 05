@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+/*
+Elaborar o algoritmo da calculadora utilizando funções. Implementar as seguintes
+opções: soma, subtração, multiplicação e divisão. 
+*/
+
+float Soma(float n1, float n2);
+float Subtracao(float n1, float n2);
+float Multipli(float n1, float n2);
+float Divisao(float n1, float n2);
+
+
+int main(){
+
+	float n1, n2;
+	char op;
+
+	cout << "\n\tDigite um numero: ";
+	cin >> n1;
+	cout << "\tDigite uma operacao(*, /, +, -): ";
+	cin >> op;
+	cout << "\tDigite um numero: ";
+	cin >> n2;
+	switch(op){
+		case '+':
+			cout << "\tResultado: " << Soma(n1, n2);
+		break;
+		case '-':
+			cout << "\tResultado: " << Subtracao(n1, n2);
+		break;
+		case '*':
+			cout << "\tResultado: " << Multipli(n1, n2);
+		break;
+		case '/':
+			cout << "\tResultado: " << Divisao(n1, n2);		
+	}
+	
+}
+
+float Soma(float n1, float n2){
+	
+	return n1 + n2; 
+}
+
+float Subtracao(float n1, float n2){
+	
+	return n1 - n2;
+}
+
+float Multipli(float n1, float n2){
+	
+	return n1 * n2;
+}
+
+float Divisao(float n1, float n2){
+	
+	return n1/n2;
+}
