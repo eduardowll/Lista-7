@@ -1,0 +1,56 @@
+#include <iostream>
+#define tam 10
+using namespace std;
+
+/*
+Elaborar um algoritmo que leia um vetor de 10 posições de inteiros e chame uma
+função MinMax. Esta função deve receber o vetor lido e, por referência, duas variáveis
+inteiras, min e max. O objetivo da função é buscar os valores do menor e maior
+elementos do vetor e atribuir às variáveis min e max respectivamente. 
+*/
+
+int MinMax(int *pv, int *min, int *max);
+
+int main(){
+	
+	int v[tam], min, max;
+	
+	for(int i = 0; i < tam; i++){
+		cout << "\tDigite o numero de indice " << i + 1 << " do vetor: ";
+		cin >> v[i];
+	}
+	MinMax(v, &min, &max);
+	cout << "\n\tMaior numero: " << max; 
+	cout << "\n\tMenor numero: " << min;
+	
+}
+
+int MinMax(int *pv, int *min, int *max){
+	
+	*min = pv[0];
+	*max = pv[0]; 
+	
+	for(int i = 1; i < tam; i++){ 
+			if(pv[i] > *max){
+				*max = pv[i];	
+			}
+			if(pv[i] < *min){
+				*min = pv[i];	
+			}
+	}
+	
+/*
+	*min = pv[0];
+    *max = pv[0];
+ 
+   
+    for (int i = 1; i < tam; i++) {
+        if (pv[i] > *max) {
+            *max = pv[i];
+        }
+        if (pv[i] < *min) {
+            *min = pv[i];
+        }
+    }
+*/	
+}
