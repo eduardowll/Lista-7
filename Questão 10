@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+/*
+Em seguida, utilizando o algoritmo anterior implemente outra função chamada
+multiplicaEscalar, que recebe como parâmetro dois vetores V1 e V2 (ambos de tamanho
+N), e um número inteiro X. A função deve multiplicar cada um dos elementos de V1 por
+X e armazenar os resultados em V2. A função deve possui a seguinte assinatura: void
+multiplica_escalar(int *v1, int *v2, int x, int n);
+No main, utilize as funções inverteVetor e multiplicaEscalar para inverter um vetor de
+tamanho 10 fornecido pelo usuário e em seguida multiplicar esse vetor por um escalar
+também fornecido pelo usuário. Por último, o programa deverá exibir o vetor resultante. 
+*/
+
+int inverteVetor(int *v1, int *v2, int n);
+void Multiescalar(int *v1, int *v2, int x, int n);
+
+int main(){
+	
+	int tam = 10, v1[tam], v2[tam], *pv1, *pv2, n, escalar;
+	
+	cout << "\n\tQual o tamanho do vetor?: ";
+	cin >> tam;
+	for(int i = 0; i < tam; i++){
+		cout << "\tDigite o numero de indice " << i + 1 << " do vetor: ";
+		cin >> v1[i];
+	}
+	cout << "\n\tQual numero ira multiplicar o vetor: ";
+	cin >> escalar;
+	inverteVetor(v1, v2, tam);
+	Multiescalar(v1, v2, escalar, tam);
+	cout << "\n\tVetor trocado e multiplicado: ";
+	for(int i = 0; i < tam; i++){
+		cout << v2[i] << " ";
+	}
+}
+
+int inverteVetor(int *v1, int *v2, int n){
+    
+    for(int i = 0; i < n; i++){
+        v2[i] = v1[n - 1 - i];  	
+    }
+}
+
+void Multiescalar(int *v1, int *v2, int x, int n){
+
+	for(int i = 0; i < n; i++){
+		v2[i] = v2[i] * x;
+	}
+	
+}
