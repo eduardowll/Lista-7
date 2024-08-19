@@ -1,0 +1,47 @@
+#include <iostream>
+#define tam 5
+using namespace std;
+
+/*
+Crie um algoritmo para manipular vetores. O seu programa deve implementar
+uma função chamada inverteVetor, que recebe como parâmetro dois vetores V1 e V2,
+ambos de tamanho N. A função deve copiar os elementos de V1 para V2 na ordem
+inversa. Ou seja, se a função receber V1 = {1,2,3,4,5}, a função deve copiar os elementos
+para V2 na seguinte ordem: V2 = {5,4,3,2,1}. Além disso, a função também deve retornar
+o maior valor encontrado em V1. A função deve possuir a seguinte assinatura: int
+inverteVetor(int *v1, int *v2, int n); Elabore um teste da função no main.
+*/
+
+int inverteVetor(int *v1, int *v2, int n);
+
+int main(){
+	
+	int v1[tam], v2[tam], *pv1, *pv2, n;
+	
+	for(int i = 0; i < 5; i++){
+		cout << "\tDigite o numero de indice " << i + 1 << " do vetor: ";
+		cin >> v1[i];
+	}
+	n = inverteVetor(v1, v2, tam);
+	cout << "\n\tVetor trocado: ";
+	for(int i = 0; i < tam; i++){
+		cout << v2[i] << " ";
+	}
+	cout << "\n\tMaior numero do vetor: " << n;
+}
+
+int inverteVetor(int *v1, int *v2, int n){
+	
+	int maior = v1[0]; 
+    
+    for (int i = 0; i < n; i++) {
+        v2[i] = v1[n - 1 - i];  
+        if (v1[i] > maior) {
+            maior = v1[i];
+        }
+    }
+    
+    return maior;
+}
+
+ 
